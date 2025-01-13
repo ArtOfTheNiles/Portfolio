@@ -1,6 +1,6 @@
 # Portfolio
 
-Welcome to the backend to my Portfolio website, currently being built with React
+Welcome to the application behind my Portfolio website, currently being built with React
 
 
 

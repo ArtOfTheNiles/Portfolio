@@ -1,0 +1,64 @@
+
+/* ||-Skill-Badge */
+.skill-badge {
+    display: flexbox;
+    min-width: 50%;
+    max-width: 90%;
+    flex-basis: 600px;
+    min-height: fit-content;
+    background-color: rgb(192, 223, 223);
+    border-radius: 1rem;
+}
+
+.skill-badge-icons-container {
+    display: flexbox;
+    width: 30%;
+}
+
+.skill-badge-icons-container-top {
+    display: flex;
+}
+
+
+.skill-badge-type-icon {
+    flex-basis: 2rem;
+    border-radius: 25%;
+    margin: 0.3rem;
+}
+
+.skill-badge-type-text {
+    flex-basis: content;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    width: fit-content;
+}
+.skill-badge-type-text::before {
+    content: ": ";
+}
+
+.skill-badge-hero-icon {
+    width: 128px;
+    border-radius: 20%;
+    margin: 0.6rem;
+}
+
+.skill-badge-text-container {
+    display: none;
+}
+
+
+.confidence-text-container{
+    display: flexbox;
+}
+
+.confidence-details-dropdown {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.confidence-text-container:hover
+.confidence-details-dropdown {
+    display: flexbox;
+}
+

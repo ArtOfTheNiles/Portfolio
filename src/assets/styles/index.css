@@ -20,10 +20,10 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2rem;
-  line-height: 1.1;
+section {
+  margin-left: 1.5rem;
 }
+
 
 button {
   border-radius: 8px;

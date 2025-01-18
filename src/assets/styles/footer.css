@@ -1,0 +1,15 @@
+/* Box Styling */
+footer {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Text Styling */
+.footer {
+    font-size: 0.6rem;
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+}

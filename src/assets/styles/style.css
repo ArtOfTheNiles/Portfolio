@@ -1,9 +1,3 @@
-/* Table of Contents:
-||-Anchors
-||-Skill-Badge
-||-Media
-*/
-
 :root {
     --swatch-oxford-blue: #191d32;
     --swatch-space-cadet: #282f44;
@@ -18,6 +12,7 @@
 
 body {
     display: flex;
+    width: 100vw;
     flex-direction: column;
     align-items: center;
     font-size: 16px;
@@ -26,134 +21,6 @@ body {
     background-color: var(--bg-color1);
 }
 
-.splash {
-    text-align: center;
-    background-color: var(--bg-color2);
-    background-image: url("./assets/images/840x460pl.png") center;
-}
-
-.main-header {
-    width: 100%;
-}
-
-.main-header nav ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: var(--swatch-oxford-blue);
-    background-image: linear-gradient(var(--bg-color2), var(--bg-color1));
-}
-
-.main-header nav ul li {
-    margin: 0.5rem 2rem;
-}
-
-#programming,
-#art-animation,
-#contact,
-#about,
-#resume {
-    margin-left: 5vw;
-}
-
-#programming nav ul, 
-#art-animation nav ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: var(--swatch-oxford-blue);
-    background-image: linear-gradient(var(--bg-color2), var(--bg-color1));
-}
-
-#programming nav ul li,
-#art-animation nav ul li {
-    flex: 2 1 200px;
-    height: 90px;
-    background-color: var(--swatch-moonstone);
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    margin: 0.5rem 2rem;
-}
-
-
-/* ||-Skill-Badge */
-.skill-badge {
-    display: flexbox;
-    min-width: 50%;
-    max-width: 90%;
-    flex-basis: 600px;
-    min-height: fit-content;
-    background-color: rgb(192, 223, 223);
-    border-radius: 1rem;
-}
-
-.skill-badge-icons-container {
-    display: flexbox;
-    width: 30%;
-}
-
-.skill-badge-icons-container-top {
-    display: flex;
-}
-
-
-.skill-badge-type-icon {
-    flex-basis: 2rem;
-    border-radius: 25%;
-    margin: 0.3rem;
-}
-
-.skill-badge-type-text {
-    flex-basis: content;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.8rem;
-    width: fit-content;
-}
-.skill-badge-type-text::before {
-    content: ": ";
-}
-
-.skill-badge-hero-icon {
-    width: 128px;
-    border-radius: 20%;
-    margin: 0.6rem;
-}
-
-
-.skill-badge-text-container {
-    display: none;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.confidence-text-container{
-    display: flexbox;
-}
-
-.confidence-details-dropdown {
-    display: none;
-    position: absolute;
-    z-index: 1;
-}
-
-.confidence-text-container:hover
-.confidence-details-dropdown {
-    display: flexbox;
-}
 
 
 

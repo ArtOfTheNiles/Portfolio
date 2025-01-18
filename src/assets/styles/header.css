@@ -11,6 +11,8 @@ header {
 
 h1 {
     color: #d7dfe7;
+    font-size: 3.2rem;
+    line-height: 1.1;
 }
 
 .header-bar {

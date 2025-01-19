@@ -1,11 +1,12 @@
-// import React from "react"
 import NavLink from "./NavLink"
-import "./Header.css"
+import HeroIcon from "./HeroIcon"
+import "@/styles/header.css"
 
 export const Header = () => {
     return (
         <header>
             <div className="header-bar">
+                <HeroIcon />
                 <div>
                     <h1 className="brown-eye">Hetero</h1><h1 className="blue-eye">Codea</h1>
                 </div>

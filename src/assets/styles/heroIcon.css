@@ -1,0 +1,25 @@
+:root {
+    --hero-icon-size: 6rem;
+}
+
+.hero-icon-container {
+    width: var(--hero-icon-size);
+    height: var(--hero-icon-size);
+}
+
+.hero-icon {
+    width: var(--hero-icon-size);
+    height: var(--hero-icon-size);
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+img {
+    width: var(--hero-icon-size);
+    height: var(--hero-icon-size);
+    line-height: calc(var(--hero-icon-size)*1.75);
+}
+
+img::before {
+    text-align: center;
+}

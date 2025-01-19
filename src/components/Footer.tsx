@@ -1,4 +1,5 @@
-import "@styles/Footer.css";
+import "@/styles/footer.css";
+
 export const Footer = () => {
     return (
         <footer className="footer">

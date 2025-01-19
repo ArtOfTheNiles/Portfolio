@@ -1,3 +1,10 @@
+.about-section-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
 .about-section {
-    /* alternate color section 90% box */
+    background-color: aquamarine;
 }

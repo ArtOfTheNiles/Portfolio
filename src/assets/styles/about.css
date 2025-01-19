@@ -1,10 +1,22 @@
-.about-section-container{
+.about-section {
+    margin: 0 1rem;
+    width: 90vw;
+    padding: 1rem 1.5rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    background-color: rgba(54, 70, 100, 0.1);
+    background-image: linear-gradient(rgba(109, 132, 173, 0.1) 0%, rgba(27, 36, 54, 0.1) 30%);
+    border-radius: 1rem;
 }
 
-.about-section {
-    background-color: aquamarine;
+.about-section h2 {
+    margin: 0 0 0 1rem;
+    align-self: flex-start;
+}
+
+.about-section p {
+    line-height: 1.25;
+    margin: 1rem 0 0;
 }

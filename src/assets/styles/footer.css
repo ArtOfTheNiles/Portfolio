@@ -5,6 +5,14 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+    padding-top: 1.5rem;
+    background-image: radial-gradient(
+        ellipse at bottom, 
+        #191d32 45%,
+        rgba(0,0,0,0) 65%
+    );
+    background-size: 300vw 100%;
+    background-position: -100vw 0;
 }
 
 /* Text Styling */

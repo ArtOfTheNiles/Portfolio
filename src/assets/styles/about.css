@@ -12,11 +12,13 @@
 }
 
 .about-section h2 {
-    margin: 0 0 0 1rem;
+    margin: 0 0 0 0.5rem;
     align-self: flex-start;
 }
 
 .about-section p {
     line-height: 1.25;
     margin: 1rem 0 0;
+    font-weight: 300;
 }
+

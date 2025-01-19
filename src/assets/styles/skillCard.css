@@ -62,3 +62,9 @@
     display: flexbox;
 }
 
+@media (prefers-color-scheme: dark) {
+
+}
+@media (prefers-color-scheme: light) {
+
+}

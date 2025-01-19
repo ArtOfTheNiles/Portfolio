@@ -4,13 +4,15 @@ import { Header } from "./components/Header"
 import { Projects } from "./components/Projects"
 import { Skills } from "./components/Skills"
 import { Footer } from "./components/Footer"
-import { FalseFooter } from "./components/falseFooter"
+import { FalseHeader } from "./components/FalseHeader"
+import { FalseFooter } from "./components/FalseFooter"
 
 //Layout of the website
 function App() {
   return (
     <>
       <Header />
+      <FalseHeader />
       <Projects />
       <Skills />
       <About />

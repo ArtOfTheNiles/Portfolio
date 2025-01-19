@@ -7,16 +7,16 @@
 
 .contact-section {
     margin: 0;
-    width: 70%;
+    width: 65%;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    background-color: #f5fffe;
-    background-image: linear-gradient(#f5fffe 70%, #9c9ea0 100%);
-    color: #191d32;
+    background-color: var(--light-primary);
+    background-image: var(--light-gradient);
+    color: var(--dark-primary);
     border-radius: 1.5rem;
-    border: 0.2rem solid #7274ff;
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
+    border: 0.2rem solid var(--callout-primary);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .contact-section h2,
@@ -36,27 +36,12 @@
 }
 
 #contact-error {
-    color: #c74447;
+    color: var(--error);
     font-weight: bold;
     margin: 1rem;
     text-align: center;
     text-decoration: underline;
     letter-spacing: 0.05rem;
-}
-
-form button {
-    align-self: center;
-    margin-top: 1rem;
-    width: 8rem;
-    padding: 1rem 0.5rem;
-    border: 0.1rem solid #ffffff;
-    border-radius: 0.5rem;
-    letter-spacing: 8%;
-    background-color: #7274ff;
-    background-image: linear-gradient(#6163d4 40%, #373983 100%);
-    color: #f5fffe;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 textarea {
@@ -66,10 +51,18 @@ textarea {
     height: 10rem;
 }
 
-input, textarea {
-    background-color: #bdc5c5;
-    background-image: linear-gradient(#cdd5d6 70%, #abb2b6 100%);
-    color: black;
-    border-radius: 0.25rem;
-    border-color: #7274ff;
+@media (prefers-color-scheme: dark) {
+    .contact-section {
+        background-color: var(--dark-primary);
+        background-image: var(--dark-callout-gradient);
+        color: var(--light-primary);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .contact-section {
+        background-color: var(--light-primary);
+        background-image: var(--light-callout-gradient);
+        color: var(--dark-primary);
+    }
 }

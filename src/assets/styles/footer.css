@@ -8,7 +8,7 @@ footer {
     padding-top: 1.5rem;
     background-image: radial-gradient(
         ellipse at bottom, 
-        #191d32 45%,
+        var(--dark-primary) 45%,
         rgba(0,0,0,0) 65%
     );
     background-size: 300vw 100%;
@@ -20,4 +20,17 @@ footer {
     font-size: 0.6rem;
     font-weight: 100;
     letter-spacing: 0.1rem;
+}
+
+@media (prefers-color-scheme: light) {
+    footer {
+        background-image: radial-gradient(
+            ellipse at bottom, 
+            var(--light-tertiary) 45%,
+            rgba(255,255,255,0) 65%
+        );
+    }
+    .footer {
+        font-weight: 300;
+    }
 }

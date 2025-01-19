@@ -8,7 +8,7 @@ export const Contact = () => {
         <div className="contact-container">
             <section className="contact-section">
                 <h2>Contact</h2>
-                <p>Feel free to send me a message about past or future projects!</p>
+                <p>I look forward to hearing about past, present and future projects. Let's make something great!</p>
                 <form className="contact-form">
                     <label htmlFor="name">Name:</label>
                     <input type="text" id="name" name="name" />

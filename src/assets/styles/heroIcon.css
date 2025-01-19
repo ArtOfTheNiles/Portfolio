@@ -13,11 +13,23 @@
     height: var(--hero-icon-size);
     object-fit: cover;
     border-radius: 50%;
-    border: 0.3rem solid #45cfc4;
+    border: 0.3rem solid var(--link-hover);
 }
 
 img {
     width: var(--hero-icon-size);
     height: var(--hero-icon-size);
     line-height: calc(var(--hero-icon-size)*1.75);
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero-icon {
+        border: 0.3rem solid var(--callout-primary);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .hero-icon {
+        border: 0.3rem solid var(--link-hover);
+    }
 }

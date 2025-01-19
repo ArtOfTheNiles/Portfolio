@@ -18,6 +18,8 @@ dist-ssr
 .env.test.local
 .env.production.local
 
+seeds/
+
 _notes
 
 # Editor directories and files

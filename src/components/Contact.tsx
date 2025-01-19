@@ -1,5 +1,8 @@
 import '@/styles/contact.css';
 
+//TODO: wire up the form to send to database
+//TODO: add a success message when form is submitted
+//TODO: Error logic for invalid form fields
 export const Contact = () => {
     return (
         <div className="contact-container">

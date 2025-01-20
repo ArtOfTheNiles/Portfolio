@@ -1,28 +1,42 @@
+import { useEffect, useState } from 'react'
+
+import { loadProjects, loadSkills } from './loadService';
+import useList from '../hooks/useList'
 import '@/styles/projects.css'
+import { ProjectCard } from './ProjectCard';
 
 export interface ProjectProps {
     name: string;
+    image: string; // URL
     description: string;
     clients: string[];
     technologies: string[];
     startDate: Date;
     endDate: Date;
-}
-
-export interface ArtProps extends ProjectProps {
-    portfolio: string; // URL
-}
-
-export interface TechProps extends ProjectProps {
-    repository: string; // URL
-    liveLink: string; // URL
+    portfolio?: string; // URL
+    repository?: string; // URL
+    liveLink?: string; // URL
 }
 
 export const Projects = () => {
+    const [projects, setProjects] = useState<ProjectProps[]>([])
+    useEffect(() => {
+        const loadData = async () => {
+            const data: ProjectProps[] = await loadProjects();
+            setProjects(data);
+        }
+        loadData();
+    }, []);
+
     return (
         <section className="projects-section">
             <h2>Projects</h2>
-            <p>Here are some of the projects I have worked on.</p>
+            <ul className="projects-list">
+                {/* TODO: make it a list */}
+                <ProjectCard {...projects[0]} />
+                <ProjectCard {...projects[1]} />
+                <ProjectCard {...projects[2]} />
+            </ul>
         </section>
     )
 }

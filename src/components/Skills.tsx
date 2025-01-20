@@ -1,23 +1,11 @@
 import { ProjectProps } from './Projects.tsx';
 //TODO: connect with useList hook to display skills list
 
-export class SkillProps {
+export interface SkillProps {
     name: string;
     description: string;
     confidence: number; // 0-1
-    project: ProjectProps;
-    constructor(name: string, description: string, confidence: number, project: ProjectProps) {
-        this.name = name;
-        this.description = description;
-        if (confidence < 0) {
-            this.confidence = 0;
-        } else if (confidence > 1) {
-            this.confidence = 1;
-        } else {
-            this.confidence = confidence;
-        }
-        this.project = project;
-    }
+    learnedOn: string;
 }
 
 export const Skills = () => {

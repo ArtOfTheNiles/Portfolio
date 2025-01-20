@@ -13,7 +13,8 @@ export default defineConfig({
     alias: {
       '@/styles': path.resolve(__dirname, './src/assets/styles'),
       '@/components': path.resolve(__dirname, './src/components'),
-      '@/icons': path.resolve(__dirname, './public/icons')
+      '@/icons': path.resolve(__dirname, './public/icons'),
+      '@/hooks': path.resolve(__dirname, './src/hooks'),
     }
   }
 })

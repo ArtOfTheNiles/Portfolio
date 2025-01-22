@@ -1,12 +1,12 @@
-import { About } from "./components/About"
-import { Contact } from "./components/Contact"
-import { Header } from "./components/Header"
-import { Projects } from "./components/Projects"
-import { Resume } from "./components/Resume"
-import { Skills } from "./components/Skills"
-import { Footer } from "./components/Footer"
-import { FalseHeader } from "./components/FalseHeader"
-import { FalseFooter } from "./components/FalseFooter"
+import { About } from "./components/About.tsx"
+import { Contact } from "./components/Contact.tsx"
+import { Header } from "./components/Header.tsx"
+import { Projects } from "./components/Projects.tsx"
+import { Resume } from "./components/Resume.tsx"
+import { Skills } from "./components/Skills.tsx"
+import { Footer } from "./components/Footer.tsx"
+import { FalseHeader } from "./components/FalseHeader.tsx"
+import { FalseFooter } from "./components/FalseFooter.tsx"
 
 //Layout of the website
 function App() {

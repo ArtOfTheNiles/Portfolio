@@ -1,5 +1,9 @@
-/* Box Styling */
 footer {
+    display: inline-block;
+    text-align: center;
+
+    font-weight: 100;
+    letter-spacing: 0.1rem;
     text-align: center;
     position: fixed;
     left: 0;
@@ -15,12 +19,21 @@ footer {
     background-position: -100vw 0;
 }
 
-/* Text Styling */
-.footer {
-    font-size: 0.6rem;
+.footer * {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.75rem;
     font-weight: 100;
-    letter-spacing: 0.1rem;
+    letter-spacing: 15%;
 }
+
+nav.footer {
+    display: inline-block;
+}
+
+nav.footer a {
+    cursor: pointer;
+}
+
 
 @media (prefers-color-scheme: light) {
     footer {
@@ -30,7 +43,7 @@ footer {
             rgba(255,255,255,0) 65%
         );
     }
-    .footer {
-        font-weight: 300;
+    .footer * {
+        font-weight: 400;
     }
 }

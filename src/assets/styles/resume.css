@@ -1,0 +1,10 @@
+.resume-section {
+  margin-bottom: 2rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.resume-section button {
+  margin-left: 20vw;
+  width: 33vw;
+}

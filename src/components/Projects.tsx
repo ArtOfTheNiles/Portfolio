@@ -29,13 +29,16 @@ export const Projects = () => {
     }, []);
 
     return (
-        <section className="projects-section">
+        <section id="projects" className="projects-section">
             <h2>Projects</h2>
             <ul className="projects-list">
                 {/* TODO: make it a list */}
                 <ProjectCard {...projects[0]} />
                 <ProjectCard {...projects[1]} />
                 <ProjectCard {...projects[2]} />
+                <ProjectCard {...projects[3]} />
+                <ProjectCard {...projects[4]} />
+                <ProjectCard {...projects[5]} />
             </ul>
         </section>
     )

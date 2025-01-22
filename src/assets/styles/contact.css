@@ -20,7 +20,7 @@
 }
 
 .contact-section h2,
-.contact-section p {
+.contact-section > p {
     margin: 0;
 }
 
@@ -35,13 +35,17 @@
     margin-top: 1rem;
 }
 
-#contact-error {
+.error {
     color: var(--error);
     font-weight: bold;
     margin: 1rem;
     text-align: center;
     text-decoration: underline;
     letter-spacing: 0.05rem;
+}
+
+.hidden {
+    display: none;
 }
 
 textarea {

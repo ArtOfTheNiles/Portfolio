@@ -1,10 +1,6 @@
 import { ProjectProps } from "./Projects"
 import '@/styles/projectCard.css'
 
-function getNiceDate(date: Date) {
-  return new Intl.DateTimeFormat('en-US').format(date);
-}
-
 export const ProjectCard = (props: ProjectProps) => {
   return (
     <div className="project-card">

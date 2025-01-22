@@ -18,6 +18,7 @@ Welcome to the application behind my Portfolio website, currently being built wi
 ## Usage
 
 I've done a lot of different things in my career so be sure to use filters to your advantage 😉
+(When I get to them 😭)
 
 
 

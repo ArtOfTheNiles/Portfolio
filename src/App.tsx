@@ -6,7 +6,8 @@ import { Resume } from "./components/Resume.tsx"
 import { Skills } from "./components/Skills.tsx"
 import { Footer } from "./components/Footer.tsx"
 import { FalseHeader } from "./components/FalseHeader.tsx"
-import { FalseFooter } from "./components/FalseFooter.tsx"
+import { FalseFooter } from "./components/falseFooter.tsx"
+
 
 //Layout of the website
 function App() {

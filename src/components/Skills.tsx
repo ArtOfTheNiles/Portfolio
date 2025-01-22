@@ -1,4 +1,3 @@
-import { ProjectProps } from './Projects.tsx';
 //TODO: connect with useList hook to display skills list
 
 export interface SkillProps {

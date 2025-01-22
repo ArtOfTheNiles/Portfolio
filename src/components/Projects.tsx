@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { loadProjects, loadSkills } from './loadService';
-import useList from '../hooks/useList'
+import { loadProjects } from './loadService';
 import '@/styles/projects.css'
 import { ProjectCard } from './ProjectCard';
 

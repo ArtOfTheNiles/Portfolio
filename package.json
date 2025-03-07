@@ -1,33 +1,51 @@
 {
-  "name": "portfolio",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "bontrager-portfolio",
+  "version": "1.0.0",
+  "description": "Welcome to the application behind my Portfolio website, currently being built with React",
+  "main": "./client/index.html",
   "scripts": {
-    "dev": "vite",
-    "start": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@types/node": "^22.10.7",
-    "node": "^22.13.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^7.1.1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm i && npm run seed && npm run build && npm run start:dev",
+    "start:dev": "concurrently \"npm run server:dev\" \"wait-on tcp:3001 && npm run client:dev\"",
+    "server": "cd server && npm start",
+    "server:dev": "cd server && npm run dev",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "client": "cd client && npm start",
+    "client:build": "cd client && npm run build",
+    "client:dev": "cd client && npm run dev",
+    "build": "cd client && npm run build && cd ../server && npm run build",
+    "seed": "cd server && npm run seed",
+    "render-build": "npm install && npm run build",
+    "render-start": "npm run server"
   },
   "devDependencies": {
-    "@eslint/js": "^9.17.0",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
+    "@types/node": "^22.13.4",
+    "@types/typescript": "^0.4.29",
     "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.17.0",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.16",
-    "globals": "^15.14.0",
-    "typescript": "~5.6.2",
-    "typescript-eslint": "^8.18.2",
-    "vite": "^6.0.5"
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "wait-on": "^7.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtOfTheNiles/Portfolio.git"
+  },
+  "keywords": [
+    "artist",
+    "programmer",
+    "unicorn",
+    "portfolio"
+  ],
+  "author": "Niles Bontrager",
+  "license": "None",
+  "type": "module",
+  "homepage": "https://github.com/ArtOfTheNiles/Portfolio#readme",
+  "dependencies": {
+    "@types/dotenv": "^6.1.1",
+    "dotenv": "^16.4.7",
+    "npm": "^11.1.0"
   }
 }

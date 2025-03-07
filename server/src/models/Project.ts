@@ -1,0 +1,59 @@
+import { Schema, model, type Document } from 'mongoose';
+import { JobType } from './jobTypes';
+import { SkillType } from './skillTypes';
+
+
+interface IProject extends Document {
+  projectName: string;
+  clients?: Schema.Types.ObjectId[];
+  jobType: JobType;
+  startDate: Date;
+  endDate: Date;
+  description: string;
+  projectURL?: string;
+  repositoryURL?: string;
+  otherURLs?: string[];
+  associatedSkills: SkillType[];
+}
+
+const projectSchema = new Schema<IProject>(
+  {
+    projectName: {
+      type: String,
+      required: true,
+    },
+    clients: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Client',
+    }],
+    jobType: {
+      type: String,
+      required: true,
+    },
+    startDate: {
+      type: Date,
+      required: true,
+    },
+    endDate: {
+      type: Date,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    projectURL: { type: String },
+    repositoryURL: { type: String },
+    otherURLs: [String],
+    associatedSkills: [String],
+  },
+  {
+    timestamps: true,
+    toJSON: { getters: true },
+    toObject: { getters: true },
+  }
+);
+
+const Project = model<IProject>('Project', projectSchema);
+
+export default Project;

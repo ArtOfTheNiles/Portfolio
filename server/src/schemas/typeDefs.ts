@@ -52,7 +52,7 @@ const typeDefs = `
       skillName: String!
       skillURL: String
       iconURL: String
-      skillType: String!
+      skillType: [String!]
       summary: String!
       description: String!
       confidenceLevel: Int!

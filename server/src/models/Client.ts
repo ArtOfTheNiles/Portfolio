@@ -3,6 +3,8 @@ import { Schema, model, type Document } from 'mongoose';
 export interface IClient extends Document {
   clientName: string;
   clientURL: string;
+  thruClientName?: string;
+  thruClientURL?: string;
   associatedProjects: Schema.Types.ObjectId[];
 }
 
@@ -15,6 +17,12 @@ const clientSchema = new Schema<IClient>(
     clientURL: {
       type: String,
       required: true,
+    },
+    thruClientName: {
+      type: String,
+    },
+    thruClientURL: {
+      type: String,
     },
     associatedProjects: [{
       type: Schema.Types.ObjectId,

@@ -19,6 +19,8 @@ const typeDefs = `
     _id: ID!
     clientName: String
     clientURL: String
+    thruClientName: String
+    thruClientURL: String
     associatedProjects: [Project]
   }
 
@@ -63,6 +65,8 @@ const typeDefs = `
     addClient(
       clientName: String!
       clientURL: String!
+      thruClientName: String
+      thruClientURL: String
     ): Client
 
     addProject(

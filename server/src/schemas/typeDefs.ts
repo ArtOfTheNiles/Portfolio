@@ -4,10 +4,13 @@ const typeDefs = `
     skillName: String
     skillURL: String
     iconURL: String
-    skillType: String
+    skillType: [String]
+    summary: String
     description: String
     confidenceLevel: Int
+    confidenceDescription: String
     passionLevel: Int
+    passionDescription: String
     associatedProjects: [Project]
     earliestLearnedDate: String
   }
@@ -48,9 +51,13 @@ const typeDefs = `
       skillURL: String
       iconURL: String
       skillType: String!
+      summary: String!
       description: String!
       confidenceLevel: Int!
+      confidenceDescription: String
       passionLevel: Int!
+      passionDescription: String
+      earliestLearnedDate: String
     ): Skill
 
     addClient(

@@ -1,15 +1,17 @@
 import { Schema, model, type Document } from 'mongoose';
 import { SkillType } from './skillTypes';
-import Project from './Project';
 
 export interface ISkill extends Document {
   skillName: string;
   skillURL?: string;
   iconURL?: string;
-  skillType: SkillType;
+  skillType: [string];
+  summary: string;
   description: string;
   confidenceLevel: number;
+  confidenceDescription: string;
   passionLevel: number;
+  passionDescription: string;
   associatedProjects: Schema.Types.ObjectId[];
 }
 
@@ -21,7 +23,12 @@ const skillSchema = new Schema<ISkill>(
     },
     skillURL: { type: String },
     iconURL: { type: String },
-    skillType: {
+    skillType: [{
+        type: String,
+        enum: Object.values(SkillType),
+        required: true,
+    }],
+    summary: {
       type: String,
       required: true,
     },
@@ -35,12 +42,14 @@ const skillSchema = new Schema<ISkill>(
       max: 100,
       required: true,
     },
+    confidenceDescription: { type: String },
     passionLevel: {
       type: Number,
       min: 0,
       max: 100,
       required: true,
     },
+    passionDescription: { type: String },
     associatedProjects: [{
       type: Schema.Types.ObjectId,
       ref: 'Project',

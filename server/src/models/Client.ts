@@ -1,5 +1,4 @@
 import { Schema, model, type Document } from 'mongoose';
-import Project from './Project';
 
 export interface IClient extends Document {
   clientName: string;

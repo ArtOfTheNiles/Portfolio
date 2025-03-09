@@ -1,13 +1,12 @@
-export type SkillType = 
-'Digital Art' |
-'Traditional Art' |
-'3D Modeling' |
-'Animation' |
-'Graphic Design' |
-'Web Development' |
-'App Development' |
-'Game Development' |
-'Soft Skill' |
-'Software Application' |
-'Other'
-;
+export enum SkillType {
+  DigitalArt = 'Digital Art',
+  TraditionalArt = 'Traditional Art',
+  Modeling = '3D Modeling',
+  Animation = 'Animation',
+  GraphicDesign = 'Graphic Design',
+  Programming = 'Programming',
+  SoftSkill = 'Soft Skill',
+  Office = 'Office',
+  Language = 'Language',
+  Other = 'Other'
+}

@@ -13,7 +13,7 @@ interface IProject extends Document {
   projectURL?: string;
   repositoryURL?: string;
   otherURLs?: string[];
-  associatedSkills: SkillType[];
+  associatedSkills: Schema.Types.ObjectId[];
 }
 
 const projectSchema = new Schema<IProject>(
@@ -45,7 +45,10 @@ const projectSchema = new Schema<IProject>(
     projectURL: { type: String },
     repositoryURL: { type: String },
     otherURLs: [String],
-    associatedSkills: [String],
+    associatedSkills: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Skill',
+    }],
   },
   {
     timestamps: true,

@@ -41,6 +41,49 @@ const typeDefs = `
     projects: [Project]
     project(_id: ID!): Project
   }
+
+  type Mutation {
+    addSkill(
+      skillName: String!
+      skillURL: String
+      iconURL: String
+      skillType: String!
+      description: String!
+      confidenceLevel: Int!
+      passionLevel: Int!
+    ): Skill
+
+    addClient(
+      clientName: String!
+      clientURL: String!
+    ): Client
+
+    addProject(
+      projectName: String!
+      jobType: String!
+      startDate: String!
+      endDate: String
+      description: String!
+      projectURL: String
+      repositoryURL: String
+      otherURLs: [String]
+    ): Project
+
+    addSkillToProject(
+      projectId: ID!
+      skillId: ID!
+    ): Project
+
+    addClientToProject(
+      projectId: ID!
+      clientId: ID!
+    ): Project
+
+    addProjectToClient(
+      clientId: ID!
+      projectId: ID!
+    ): Client
+  }
 `;
 
 export default typeDefs;

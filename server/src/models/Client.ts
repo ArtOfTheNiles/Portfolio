@@ -17,7 +17,10 @@ const clientSchema = new Schema<IClient>(
       type: String,
       required: true,
     },
-    associatedProjects: [Project],
+    associatedProjects: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Project',
+    }],
   },
   {
     toJSON: { getters: true },

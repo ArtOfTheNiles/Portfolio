@@ -41,7 +41,10 @@ const skillSchema = new Schema<ISkill>(
       max: 100,
       required: true,
     },
-    associatedProjects: [Project],
+    associatedProjects: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Project',
+    }],
   },
   {
     timestamps: true,

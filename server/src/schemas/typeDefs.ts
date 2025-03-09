@@ -9,7 +9,7 @@ const typeDefs = `
     confidenceLevel: Int
     passionLevel: Int
     associatedProjects: [Project]
-    earliestLearnedDate: Date
+    earliestLearnedDate: String
   }
 
   type Client {
@@ -32,7 +32,6 @@ const typeDefs = `
     otherURLs: [String]
     associatedSkills: [Skill]
   }
-
 
   type Query {
     skills: [Skill]

@@ -1,6 +1,5 @@
 import { Schema, model, type Document } from 'mongoose';
 import { JobType } from './jobTypes';
-import { SkillType } from './skillTypes';
 
 
 interface IProject extends Document {

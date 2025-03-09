@@ -47,5 +47,9 @@
     "@types/dotenv": "^6.1.1",
     "dotenv": "^16.4.7",
     "npm": "^11.1.0"
+  },
+  "graphql-config": {
+    "schema": "src/schema.graphql",
+    "documents": "src/**/*.graphql"
   }
 }

@@ -17,10 +17,6 @@
     "ext": "ts,json,js",
     "exec": "npx tsx src/server.ts"
   },
-  "graphql-config": {
-    "schema": "src/schema.graphql",
-    "documents": "src/**/*.graphql"
-  },
   "keywords": [],
   "author": "Niles Bontrager",
   "license": "None",

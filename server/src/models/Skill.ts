@@ -9,6 +9,7 @@ export interface ISkill extends Document {
   skillType: SkillType;
   description: string;
   confidenceLevel: number;
+  passionLevel: number;
   associatedProjects: Schema.Types.ObjectId[];
 }
 
@@ -29,6 +30,12 @@ const skillSchema = new Schema<ISkill>(
       required: true,
     },
     confidenceLevel: {
+      type: Number,
+      min: 0,
+      max: 100,
+      required: true,
+    },
+    passionLevel: {
       type: Number,
       min: 0,
       max: 100,

@@ -1,70 +1,26 @@
-import { Project } from '../models/index.js';
-
-// Define types for the arguments
-interface ThoughtArgs {
-  thoughtId: string;
-}
-
-interface AddThoughtArgs {
-  thoughtText: string;
-  thoughtAuthor: string;
-}
-
-interface AddCommentArgs {
-  thoughtId: string;
-  commentText: string;
-}
-
-interface RemoveCommentArgs {
-  thoughtId: string;
-  commentId: string;
-}
+import { Skill, Client, Project } from '../models/index.js';
 
 const resolvers = {
   Query: {
-    thoughts: async () => {
-      // return await Thought.find().sort({ createdAt: -1 });
+    projects: async () => {
+      return await Project.find({});
     },
-    thought: async (_parent: unknown, { thoughtId }: ThoughtArgs) => {
-      // return await Thought.findOne({ _id: thoughtId });
+    project: async (_parent: unknown, _id: string ) => {
+      return await Project.findById(_id);
     },
-  },
-  Mutation: {
-    // addThought: async (
-    //   _parent: unknown,
-    //   { thoughtText, thoughtAuthor }: AddThoughtArgs
-    // ) => {
-    //   // return await Thought.create({ thoughtText, thoughtAuthor });
-    // },
-    // addComment: async (
-    //   _parent: unknown,
-    //   { thoughtId, commentText }: AddCommentArgs
-    // ) => {
-    //   return await Thought.findOneAndUpdate(
-    //     { _id: thoughtId },
-    //     {
-    //       $addToSet: { comments: { commentText } },
-    //     },
-    //     {
-    //       new: true,
-    //       runValidators: true,
-    //     }
-    //   );
-    // },
-    // removeThought: async (_parent: unknown, { thoughtId }: ThoughtArgs) => {
-    //   return await Thought.findOneAndDelete({ _id: thoughtId });
-    // },
-    // removeComment: async (
-    //   _parent: unknown,
-    //   { thoughtId, commentId }: RemoveCommentArgs
-    // ) => {
-    //   return await Thought.findOneAndUpdate(
-    //     { _id: thoughtId },
-    //     { $pull: { comments: { _id: commentId } } },
-    //     { new: true }
-    //   );
-    // },
-  },
+    skills: async () => {
+      return await Skill.find({});
+    },
+    skill: async (_parent: unknown, _id: string ) => {
+      return await Skill.findById(_id);
+    },
+    clients: async () => {
+      return await Client.find({});
+    },
+    client: async (_parent: unknown, _id: string ) => {
+      return await Client.findById(_id);
+    }
+  }
 };
 
 export default resolvers;

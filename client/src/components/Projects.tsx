@@ -3,19 +3,8 @@ import { useEffect, useState } from 'react'
 import { loadProjects } from './loadService';
 import '@/styles/projects.css'
 import { ProjectCard } from './ProjectCard';
+import { ProjectProps } from '../interfaces/project.interface';
 
-export interface ProjectProps {
-    name: string;
-    image: string; // URL
-    description: string;
-    clients: string[];
-    technologies: string[];
-    startDate: Date;
-    endDate: Date;
-    portfolio?: string; // URL
-    repository?: string; // URL
-    liveLink?: string; // URL
-}
 
 export const Projects = () => {
     const [projects, setProjects] = useState<ProjectProps[]>([])

@@ -1,5 +1,5 @@
-import { ProjectProps } from './Projects';
-import { SkillProps } from './Skills';
+import { ProjectProps } from '../interfaces/project.interface';
+import { SkillProps } from '../interfaces/skill.interface';
 
 export async function loadProjects(): Promise<ProjectProps[]> {
   let projects: ProjectProps[] = [];

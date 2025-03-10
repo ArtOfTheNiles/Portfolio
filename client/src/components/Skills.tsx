@@ -1,11 +1,4 @@
-//TODO: connect with useList hook to display skills list
-
-export interface SkillProps {
-    name: string;
-    description: string;
-    confidence: number; // 0-1
-    learnedOn: string;
-}
+// TODO: pull skills from database
 
 export const Skills = () => {
     return (

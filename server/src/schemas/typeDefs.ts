@@ -1,4 +1,11 @@
 const typeDefs = `
+  scalar Buffer
+
+  type Thumbnail {
+    data: Buffer
+    contentType: String
+  }
+
   type Skill {
     _id: ID!
     skillName: String
@@ -29,6 +36,7 @@ const typeDefs = `
   type Project {
     _id: ID!
     projectName: String
+    thumbnail: Thumbnail
     clients: [Client]
     jobType: String
     startDate: String
@@ -74,6 +82,7 @@ const typeDefs = `
 
     addProject(
       projectName: String!
+      thumbnail: Thumbnail
       jobType: String!
       startDate: String!
       endDate: String

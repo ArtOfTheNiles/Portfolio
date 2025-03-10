@@ -4,6 +4,7 @@ import { JobType } from './jobTypes';
 
 interface IProject extends Document {
   projectName: string;
+  thumbnail?: Buffer;
   clients?: Schema.Types.ObjectId[];
   jobType: JobType;
   startDate: Date;
@@ -21,6 +22,10 @@ const projectSchema = new Schema<IProject>(
     projectName: {
       type: String,
       required: true,
+    },
+    thumbnail: { 
+      data: Buffer, 
+      contentType: String,
     },
     clients: [{
       type: Schema.Types.ObjectId,

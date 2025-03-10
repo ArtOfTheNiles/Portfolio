@@ -1,11 +1,12 @@
-import { ProjectProps } from "./Projects"
+import { ProjectProps } from "../interfaces/project.interface"
 import '@/styles/projectCard.css'
 
 export const ProjectCard = (props: ProjectProps) => {
+  const image = `data:${props.thumbnail?.contentType};base64,${props.thumbnail?.data}`;
   return (
     <div className="project-card">
-      <img className="project-image" src={props.image} alt={props.name +' Image'} />
-      <h3 className="project-title">{props.name}</h3>
+      <img className="project-image" src={image} alt={props.projectName +' Image'} />
+      <h3 className="project-title">{props.projectName}</h3>
       <p className="project-description">{props.description}</p>
       <ul className="project-client-list">Clients:
         {/* TODO: make it a list

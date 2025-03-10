@@ -1,6 +1,25 @@
+import { GraphQLScalarType } from 'graphql';
 import { Skill, Client, Project } from '../models/index.js';
 
 const resolvers = {
+  Buffer: new GraphQLScalarType({
+    name: 'Buffer',
+    description: 'Node.js Buffer scalar type',
+    serialize: (value: any) => {
+      // Called when sending data to client
+      return value.toString('base64');
+    },
+    parseValue: (value: any) =>{
+      // Called when receiving client input variables
+      return Buffer.from(value, 'base64');
+    },
+    parseLiteral: (ast: any) => {
+      if (ast.kind === typeof String) {
+        return Buffer.from(ast.value, 'base64');
+      }
+      return null;
+    }
+  }),
   Query: {
     projects: async () => {
       return await Project.find({});

@@ -1,6 +1,7 @@
 // Objects to be deconstructed to string arrays for client-side use
 export interface ProjectProps {
     projectName: string;
+    thumbnail?: Buffer;
     clients?: string[];
     jobType: string;
     startDate: Date;

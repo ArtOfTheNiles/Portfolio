@@ -13,6 +13,7 @@ interface IProject extends Document {
   repositoryURL?: string;
   otherURLs?: string[];
   associatedSkills: Schema.Types.ObjectId[];
+  highlight: boolean;
 }
 
 const projectSchema = new Schema<IProject>(

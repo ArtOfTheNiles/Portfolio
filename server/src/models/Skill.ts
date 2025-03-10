@@ -13,6 +13,7 @@ export interface ISkill extends Document {
   passionLevel: number;
   passionDescription: string;
   associatedProjects: Schema.Types.ObjectId[];
+  highlight: boolean;
 }
 
 const skillSchema = new Schema<ISkill>(

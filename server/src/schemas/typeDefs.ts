@@ -13,6 +13,7 @@ const typeDefs = `
     passionDescription: String
     associatedProjects: [Project]
     earliestLearnedDate: String
+    highlight: Boolean
   }
 
   type Client {
@@ -22,6 +23,7 @@ const typeDefs = `
     thruClientName: String
     thruClientURL: String
     associatedProjects: [Project]
+    highlight: Boolean
   }
 
   type Project {
@@ -36,6 +38,7 @@ const typeDefs = `
     repositoryURL: String
     otherURLs: [String]
     associatedSkills: [Skill]
+    highlight: Boolean
   }
 
   type Query {

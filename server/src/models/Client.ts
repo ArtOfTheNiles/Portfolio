@@ -6,6 +6,7 @@ export interface IClient extends Document {
   thruClientName?: string;
   thruClientURL?: string;
   associatedProjects: Schema.Types.ObjectId[];
+  highlight: boolean;
 }
 
 const clientSchema = new Schema<IClient>(

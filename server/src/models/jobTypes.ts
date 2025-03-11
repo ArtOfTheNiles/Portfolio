@@ -4,7 +4,6 @@ export enum JobType {
   Modeling = '3D Modeling',
   Animation = 'Animation',
   Education = 'Education',
-  GraphicDesign = 'Graphic Design',
   Programming = 'Programming',
   Office = 'Office',
   Advertising = 'Advertising',

@@ -1,5 +1,6 @@
 // Objects to be deconstructed to string arrays for client-side use
 export interface SkillProps {
+    _id: string;
     skillName: string;
     skillURL?: string;
     iconURL?: string;

@@ -17,6 +17,39 @@
   row-gap: 1rem;
 }
 
+.project-filters {
+  display: flex;
+  width: 90%;
+  margin: 0 auto 0.5rem;
+  padding: 1rem;
+  background-color: rgba(127, 127, 127, 0.1);
+  border-radius: 1rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+.filter-button {
+  padding: 0.25rem;
+  min-width: 4rem;
+  margin: 0;
+  border: 0.1rem solid var(--disabled-button-border);
+  background-color: var(--disabled-button-bg-primary);
+  background-image: linear-gradient(var(--disabled-button-bg-primary) 40%, var(--disabled-button-bg-secondary) 100%);
+  color: var(--disabled-button-text);
+  font-weight: lighter;
+  cursor: not-allowed;
+}
+
+nav {
+  margin: 0 0 0.5rem 0;
+}
+
+.filter-button:hover {
+  background-image: linear-gradient(var(--disabled-button-bg-secondary) 40%, var(--disabled-button-bg-primary) 100%);
+}
+
 .title-subtitle {
   display: flex;
   flex-direction: row;

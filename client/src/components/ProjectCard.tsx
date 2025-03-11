@@ -6,6 +6,7 @@ import { getNiceStringDate, getNiceStringDuration } from '../utility/dtFormat.js
 
 export const ProjectCard = (props: ProjectProps) => {
   const image = props.thumbnail ? props.thumbnail : 'https://picsum.photos/150';
+  console.log('ProjectCard props:', props);
   return (
     <div className="project-card">
       <img className="project-image" src={image} alt={props.projectName +' Image'} />
@@ -17,21 +18,28 @@ export const ProjectCard = (props: ProjectProps) => {
           <li>{props.clients.join(', ')}</li>
         </ul>
       )}
-      {props.projectURL && (
-        <a className="project-link" href={props.projectURL} target="_blank" rel="noreferrer">
-          View Project
-        </a>
-      )}
-      {props.repositoryURL && (
-        <a className="repo-link" href={props.repositoryURL} target="_blank" rel="noreferrer">
-          View Repo
-        </a>
-      )}
-      {props.associatedSkills && props.associatedSkills.length > 0 && (
-      <ul className="project-skill-list">Technologies:
-        <li>{props.associatedSkills.join(', ')}</li>
-      </ul>
-      )}
+      <nav className="project-links">
+        <div className="primary-links">
+          {props.projectURL && (
+            <a className="project-link" href={props.projectURL} target="_blank" rel="noreferrer">
+              View Project
+            </a>
+          )}
+          {props.projectURL && props.repositoryURL && (
+            <span> | </span>
+          )}
+          {props.repositoryURL && (
+            <a className="repo-link" href={props.repositoryURL} target="_blank" rel="noreferrer">
+              View Repo
+            </a>
+          )}
+        </div>
+        {props.associatedSkills && props.associatedSkills.length > 0 && (
+          <ul className="project-skill-list">Technologies:
+          <li>{props.associatedSkills.join(', ')}</li>
+        </ul>
+        )}
+      </nav>
       {props.otherURLs && props.otherURLs.length > 0 && (
         <ul className="project-other-links">Other Links:
           {props.otherURLs.map((url, index) => (
@@ -45,17 +53,6 @@ export const ProjectCard = (props: ProjectProps) => {
         <li>Start: {getNiceStringDate(props.startDate)}</li>
         <li>End: {getNiceStringDate(props.endDate)}</li>
         <p>Duration: {getNiceStringDuration(props.startDate, props.endDate)}</p>
-      </ul>
-      <ul> Debug: 
-        <li>Project ID: {props._id}</li>
-        <li>Job Type: {props.jobType}</li>
-        <li>Highlight: {props.highlight ? 'Yes' : 'No'}</li>
-        <li>Clients: {props.clients}</li>
-        <li>Project URL: {props.projectURL}</li>
-        <li>Repository URL: {props.repositoryURL}</li>
-        <li>Other URLs: {props.otherURLs}</li>
-        <li>Associated Skills: {props.associatedSkills}</li>
-        
       </ul>
     </div>
   )

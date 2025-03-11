@@ -55,6 +55,12 @@ textarea {
     height: 10rem;
 }
 
+button[type="submit"] {
+    align-self: center;
+    margin-top: 1rem;
+    width: 8rem;
+}
+
 @media (prefers-color-scheme: dark) {
     .contact-section {
         background-color: var(--dark-primary);

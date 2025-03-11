@@ -19,6 +19,18 @@
     display: flex;
 }
 
+.skill-filters {
+    display: flex;
+    width: 90%;
+    margin: 0 auto 0.5rem;
+    padding: 1rem;
+    background-color: rgba(127, 127, 127, 0.1);
+    border-radius: 1rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0.5rem;
+  }
 
 .skill-badge-type-icon {
     flex-basis: 2rem;
@@ -60,6 +72,26 @@
 .confidence-text-container:hover
 .confidence-details-dropdown {
     display: flexbox;
+}
+
+.tooltip {
+    position: relative;
+  }
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+  }
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 @media (prefers-color-scheme: dark) {

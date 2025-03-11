@@ -4,7 +4,7 @@ import { JobType } from './jobTypes';
 
 interface IProject extends Document {
   projectName: string;
-  thumbnail?: Buffer;
+  thumbnail?: string;
   clients?: Schema.Types.ObjectId[];
   jobType: JobType;
   startDate: Date;
@@ -23,10 +23,7 @@ const projectSchema = new Schema<IProject>(
       type: String,
       required: true,
     },
-    thumbnail: { 
-      data: Buffer, 
-      contentType: String,
-    },
+    thumbnail: { type: String },
     clients: [{
       type: Schema.Types.ObjectId,
       ref: 'Client',
@@ -49,6 +46,7 @@ const projectSchema = new Schema<IProject>(
     },
     projectURL: { type: String },
     repositoryURL: { type: String },
+    highlight: { type: Boolean },
     otherURLs: [String],
     associatedSkills: [{
       type: Schema.Types.ObjectId,

@@ -25,6 +25,7 @@ const clientSchema = new Schema<IClient>(
     thruClientURL: {
       type: String,
     },
+    highlight: { type: Boolean },
     associatedProjects: [{
       type: Schema.Types.ObjectId,
       ref: 'Project',

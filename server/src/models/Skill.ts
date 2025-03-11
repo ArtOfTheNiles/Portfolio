@@ -51,6 +51,7 @@ const skillSchema = new Schema<ISkill>(
       required: true,
     },
     passionDescription: { type: String },
+    highlight: { type: Boolean },
     associatedProjects: [{
       type: Schema.Types.ObjectId,
       ref: 'Project',

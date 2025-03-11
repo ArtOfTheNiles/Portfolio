@@ -1,11 +1,4 @@
 const typeDefs = `
-  scalar Buffer
-
-  type Thumbnail {
-    data: Buffer
-    contentType: String
-  }
-
   type Skill {
     _id: ID!
     skillName: String
@@ -36,7 +29,7 @@ const typeDefs = `
   type Project {
     _id: ID!
     projectName: String
-    thumbnail: Thumbnail
+    thumbnail: String
     clients: [Client]
     jobType: String
     startDate: String
@@ -71,6 +64,7 @@ const typeDefs = `
       passionLevel: Int!
       passionDescription: String
       earliestLearnedDate: String
+      highlight: Boolean
     ): Skill
 
     addClient(
@@ -78,11 +72,12 @@ const typeDefs = `
       clientURL: String!
       thruClientName: String
       thruClientURL: String
+      highlight: Boolean
     ): Client
 
     addProject(
       projectName: String!
-      thumbnail: Thumbnail
+      thumbnail: String
       jobType: String!
       startDate: String!
       endDate: String
@@ -90,6 +85,7 @@ const typeDefs = `
       projectURL: String
       repositoryURL: String
       otherURLs: [String]
+      highlight: Boolean
     ): Project
 
     addSkillToProject(

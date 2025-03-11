@@ -8,8 +8,16 @@
   border-radius: 1rem;
 }
 
-.project-title {
-  margin: 0 0 0.5rem 0;
+.project-title,
+.project-job-type {
+  margin: 0 0 0.25rem 0;
+}
+
+.project-job-type {
+  color: var(--callout-primary);
+  text-align: right;
+  font-weight: 300;
+  font-size: 85%;
 }
 
 .project-card p {
@@ -18,6 +26,7 @@
 }
 
 .project-card img {
+  margin: 0 0 0.25rem 0;
   align-self: center;
   width: 16rem;
   height: 9rem;

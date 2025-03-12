@@ -7,8 +7,8 @@ interface IProject extends Document {
   thumbnail?: string;
   clients?: Schema.Types.ObjectId[];
   jobType: JobType;
-  startDate: Date;
-  endDate: Date;
+  startDate: String;
+  endDate: String;
   description: string;
   projectURL?: string;
   repositoryURL?: string;
@@ -33,11 +33,11 @@ const projectSchema = new Schema<IProject>(
       required: true,
     },
     startDate: {
-      type: Date,
+      type: String,
       required: true,
     },
     endDate: {
-      type: Date,
+      type: String,
       required: true,
     },
     description: {

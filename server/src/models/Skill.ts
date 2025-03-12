@@ -14,6 +14,7 @@ export interface ISkill extends Document {
   passionDescription: string;
   associatedProjects: Schema.Types.ObjectId[];
   highlight: boolean;
+  earliestLearnedDate?: String;
 }
 
 const skillSchema = new Schema<ISkill>(
@@ -56,6 +57,7 @@ const skillSchema = new Schema<ISkill>(
       type: Schema.Types.ObjectId,
       ref: 'Project',
     }],
+    earliestLearnedDate: { type: String },
   },
   {
     timestamps: true,

@@ -1,5 +1,5 @@
 import { SkillProps } from "../interfaces/skill.interface"
-import '@/styles/skills.css'
+import '@/styles/skillCard.css'
 
 export const SkillCard = (props: SkillProps) => {
   return (

@@ -45,6 +45,7 @@
 .project-links,
 .primary-links {
   width: 100%;
+  align-items: baseline;
 }
 
 .project-links a {

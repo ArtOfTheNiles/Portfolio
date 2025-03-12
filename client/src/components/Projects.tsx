@@ -26,7 +26,10 @@ const sortProjects = (projects: ProjectProps[]): ProjectProps[] => {
 };
 
 export const Projects = () => {
+    const DEFAULT_VIEW_LIMIT = 8;
     const [projects, setProjects] = useState<ProjectProps[]>([])
+    const [viewLimit, setViewLimit] = useState(DEFAULT_VIEW_LIMIT);
+
     useEffect(() => {
         const loadData = async () => {
             const data: ProjectProps[] = await loadProjects();
@@ -35,10 +38,13 @@ export const Projects = () => {
         loadData();
     }, []);
 
+    const displayedProjects = sortProjects(projects).slice(0, viewLimit);
+    const hasMoreProjects = viewLimit < projects.length;
+
     return (
         <section id="projects" className="projects-section">
             <div className="title-subtitle">
-                <h2>Projects</h2>
+                <h2 className="section-title">Projects</h2>
                 <small>I'm planning to add filters here to make it easier to find what you want <em>but until then, please scroll</em></small>
             </div>
             <nav className="project-filters">
@@ -55,11 +61,19 @@ export const Projects = () => {
                 <button className="filter-button" disabled>Service</button>
             </nav>
             <ul className="projects-list">
-                {sortProjects(projects).map((project: ProjectProps) => (
+                {displayedProjects.map((project: ProjectProps) => (
                     <li key={project._id}>
                         <ProjectCard {...project} />
                     </li>
                 ))}
+                {hasMoreProjects && (
+                <button 
+                    className="show-more"
+                    onClick={() => setViewLimit((prev) => prev + DEFAULT_VIEW_LIMIT)}
+                >
+                    Show More!
+                </button>
+                )}
             </ul>
         </section>
     )

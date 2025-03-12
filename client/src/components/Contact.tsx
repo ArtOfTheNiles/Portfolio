@@ -40,7 +40,7 @@ export const Contact = () => {
     return (
         <div className="contact-container">
             <section id="contact" className="contact-section">
-                <h2>Contact</h2>
+                <h2 className="section-title contact">Contact</h2>
                 <p>I look forward to hearing about past, present and future projects. Let's make something great!</p>
                 <form className="contact-form">
                     <label htmlFor="name">Name:</label>

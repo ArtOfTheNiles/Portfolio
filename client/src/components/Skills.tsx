@@ -30,7 +30,10 @@ const sortSkillsByPassion = (skills: SkillProps[]): SkillProps[] => {
 }
 
 export const Skills = () => {
+    const DEFAULT_VIEW_LIMIT = 8;
     const [skills, setSkills] = useState<SkillProps[]>([])
+    const [viewLimit, setViewLimit] = useState(DEFAULT_VIEW_LIMIT);
+
     useEffect(() => {
         const loadData = async () => {
             const data: SkillProps[] = await loadSkills();
@@ -39,10 +42,13 @@ export const Skills = () => {
         loadData();
     }, []);
 
+    const displayedSkills = sortSkillsByConfidence(skills).slice(0, viewLimit);
+    const hasMoreSkills = viewLimit < skills.length;
+
     return (
         <section id="skills" className="skills-section">
             <div className="title-subtitle">
-                <h2>Skills</h2>
+                <h2 className="section-title">Skills</h2>
                 <small>I'm planning to add filters here to make it easier to find what you want <em>but until then, please scroll</em></small>
             </div>
             <nav className="skill-filters">
@@ -66,11 +72,19 @@ export const Skills = () => {
                 <button className="filter-button skill-button" disabled>Other</button>
             </nav>
             <ul className="skills-list">
-                {sortSkillsByConfidence(skills).map((skill: SkillProps) => (
+                {displayedSkills.map((skill: SkillProps) => (
                     <li key={skill._id}>
                         <SkillCard {...skill} />
                     </li>
                 ))}
+                {hasMoreSkills && (
+                <button 
+                    className="show-more"
+                    onClick={() => setViewLimit((prev) => prev + DEFAULT_VIEW_LIMIT)}
+                >
+                    Show More!
+                </button>
+                )}
             </ul>
         </section>
     )

@@ -2,12 +2,17 @@
   --skill-icon-size: 4rem;
 }
 
+.image-alt-wrapper {
+  width: var(--skill-icon-size);
+  height: var(--skill-icon-size);
+  border-radius: 0.25rem;
+  border: 1px solid var(--link-hover);
+}
+
 .skill-icon {
   width: var(--skill-icon-size);
   height: var(--skill-icon-size);
   object-fit: cover;
-  border-radius: 0.25rem;
-  border: 1px solid var(--link-hover);
 }
 
 .skill-card {
@@ -72,7 +77,15 @@
 .skill-body .show-more {
   font-size: 0.8rem;
   margin: 0;
-  padding: 0.1rem 0.5rem;
+  padding: 0 0.25rem;
+  border-radius: 0.3rem;
   border: 0.05rem solid var(--callout-primary);
   color: #cfd0ff;
+  background: none;
+  transition: background 0.3s;
+}
+
+.skill-body .show-more:hover,
+.show-more.details:hover {
+  background: var(--callout-tertiary);
 }

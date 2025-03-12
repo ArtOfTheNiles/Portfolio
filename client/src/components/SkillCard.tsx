@@ -31,7 +31,7 @@ export const SkillCard = (props: SkillProps) => {
             ))}
             {hasMoreSkillTypes && (
             <button 
-                className="show-more"
+                className="show-more details"
                 onClick={() => setViewLimit((prev) => prev + DEFAULT_VIEW_LIMIT)}
             >
                 ...

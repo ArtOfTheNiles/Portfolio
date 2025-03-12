@@ -121,7 +121,7 @@ button {
   align-self: center;
   margin-top: 1rem;
   padding: 1rem 0.5rem;
-  border: 0.1rem solid white;
+  border: 0.1rem solid var(--light-primary);
   border-radius: 0.5rem;
   letter-spacing: 8%;
   background-color: var(--callout-primary);

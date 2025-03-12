@@ -49,7 +49,7 @@ export const Skills = () => {
         <section id="skills" className="skills-section">
             <div className="title-subtitle">
                 <h2 className="section-title">Skills</h2>
-                <small>I'm planning to add filters here to make it easier to find what you want <em>but until then, please scroll</em></small>
+                <small>I'm planning to add these filters here to make it easier to find what you want <em>but until then, please scroll</em></small>
             </div>
             <nav className="skill-filters">
                 <button className="filter-button skill-button" disabled>All</button>

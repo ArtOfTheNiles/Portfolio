@@ -45,7 +45,7 @@ export const Projects = () => {
         <section id="projects" className="projects-section">
             <div className="title-subtitle">
                 <h2 className="section-title">Projects</h2>
-                <small>I'm planning to add filters here to make it easier to find what you want <em>but until then, please scroll</em></small>
+                <small>I'm planning to add these filters here to make it easier to find what you want <em>but until then, please scroll</em></small>
             </div>
             <nav className="project-filters">
                 <button className="filter-button" disabled>All</button>

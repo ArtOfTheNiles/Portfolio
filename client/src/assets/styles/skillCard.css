@@ -78,3 +78,11 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+.skill-types .show-more {
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0.1rem 0.5rem;
+  border: 0.05rem solid var(--callout-primary);
+  color: #cfd0ff;
+}

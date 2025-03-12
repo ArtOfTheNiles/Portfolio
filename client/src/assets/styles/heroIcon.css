@@ -16,7 +16,7 @@
     border: 0.3rem solid var(--link-hover);
 }
 
-img {
+.hero-icon img {
     width: var(--hero-icon-size);
     height: var(--hero-icon-size);
     line-height: calc(var(--hero-icon-size)*1.75);

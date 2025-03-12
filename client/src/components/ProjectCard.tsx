@@ -6,7 +6,6 @@ import { getNiceStringDate, getNiceStringDuration } from '../utility/dtFormat.js
 
 export const ProjectCard = (props: ProjectProps) => {
   const image = props.thumbnail ? props.thumbnail : 'https://picsum.photos/150';
-  console.log('ProjectCard props:', props);
   return (
     <div className="project-card">
       <img className="project-image" src={image} alt={props.projectName +' Image'} />

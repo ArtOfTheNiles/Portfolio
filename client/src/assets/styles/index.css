@@ -91,6 +91,12 @@ section {
   padding: 1rem 2rem;
 }
 
+.image-alt-wrapper {
+  font-size: 0.8rem;
+  line-height: 0.5rem;
+  text-align: center;
+}
+
 /* Links */
 a {
   color: var(--link);

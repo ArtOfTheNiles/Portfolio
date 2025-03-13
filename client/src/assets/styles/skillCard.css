@@ -10,6 +10,8 @@
 .image-alt-wrapper {
   width: var(--skill-icon-size);
   height: var(--skill-icon-size);
+  min-width: var(--skill-icon-size);
+  min-height: var(--skill-icon-size);
   border-radius: 0.25rem;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.2);

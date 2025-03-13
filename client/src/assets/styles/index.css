@@ -56,6 +56,11 @@
   padding: 9rem 0 7rem 0;
 }
 
+/* Navigation */
+#projects, #about, #resume, #contact, #home, #skills, #clients {
+  scroll-margin-top: 10rem; 
+}
+
 li {
   list-style-type: none;
 }

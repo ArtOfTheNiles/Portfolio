@@ -1,5 +1,28 @@
 :root {
   --skill-icon-size: 4rem;
+  --sk-white: #c4d3d4;
+  --sk-green: #52ca7a;
+  --sk-blue: #6294ff;
+  --sk-purple: #ad0ead;
+  --sk-orange: #ffb428;
+}
+
+.skillcap-20 {
+  color: var(--sk-white);
+}
+.skillcap-40 {
+  color: var(--sk-green);
+}
+.skillcap-60 {
+  color: var(--sk-blue);
+}
+.skillcap-80 {
+  color: var(--sk-purple);
+  font-weight: bold;
+}
+.skillcap-100 {
+  color: var(--sk-orange);
+  font-weight: bolder;
 }
 
 .image-alt-wrapper {
@@ -27,26 +50,21 @@
 .skill-header {
   display: flex;
   justify-content: space-between;
-  align-items: top;
+  align-items: start;
+  gap: 0.5rem;
 }
 
 .skill-header h3 {
   margin: 0 0 0.25rem 0;
 }
 
-.confidence-text-container{
-  display: flexbox;
-}
-
-.confidence-details-dropdown {
-  display: none;
-  position: absolute;
-  z-index: 1;
-}
-
-.confidence-text-container:hover
-.confidence-details-dropdown {
-  display: flexbox;
+.confidence-passion-section,
+.confidence-passion-section * {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .tooltip {

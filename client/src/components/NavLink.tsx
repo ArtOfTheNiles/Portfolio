@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom"
+import { ReactNode } from 'react';
 
-export interface NavProps {
-    to: string;
-    children: React.ReactNode;
+interface NavLinkProps {
+  to: string;
+  children: ReactNode;
 }
 
-export const NavLink: React.FC<NavProps> = ({ to, children }) => {
-    return (
-        <Link to={to}>
-            {children}
-        </Link>
-    )
-}
+const NavLink = ({ to, children }: NavLinkProps) => {
+  return (
+    <a href={to} className="nav-link">
+      {children}
+    </a>
+  );
+};
 
-export default NavLink
+export default NavLink;

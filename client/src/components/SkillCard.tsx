@@ -4,6 +4,10 @@ import S3Image from "./S3Image"
 import { SkillProps } from "../interfaces/skill.interface"
 import "@/styles/skillCard.css"
 
+function clampToTwenty(number: number) {
+  return Math.ceil(number / 20) * 20;
+}
+
 export const SkillCard = (props: SkillProps) => {
   const DEFAULT_VIEW_LIMIT = 2;
   const [viewLimit, setViewLimit] = useState(DEFAULT_VIEW_LIMIT);
@@ -65,14 +69,16 @@ export const SkillCard = (props: SkillProps) => {
           </button>
         </>
         )}
-        <ul className="skill-levels">
-          <li className="confidence tooltip">Confidence: {props.confidenceLevel}
-              <p className="confidence tooltiptext">{props.confidenceDescription}</p>
-          </li>
-          <li className="passion tooltip">Passion: {props.passionLevel}
-              <p className="passion tooltiptext">{props.confidenceDescription}</p>
-          </li>
-        </ul>
+        <div className="confidence-passion-section">
+          <span className="confidence-section">
+            <h6>Confidence:</h6>
+            <span className={`confidence-level skillcap-${clampToTwenty(props.confidenceLevel)}`}>{props.confidenceLevel}</span>
+          </span>
+          <span className="passion-section">
+            <h6>Passion:</h6>
+            <span className={`passion-level skillcap-${clampToTwenty(props.passionLevel)}`}>{props.passionLevel}</span>
+          </span>
+        </div>
       </div>
     </div>
   )

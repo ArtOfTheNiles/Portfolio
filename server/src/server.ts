@@ -1,11 +1,9 @@
 import express from 'express';
 import db from './config/connection.js';
 
-// Import the ApolloServer class
+import imageServerRouter from './routes/api/s3/imageServer.js';
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
-
-// Import the two parts of a GraphQL schema
 import { typeDefs, resolvers } from './schemas/index.js';
 
 const server = new ApolloServer({
@@ -24,6 +22,8 @@ const startApolloServer = async () => {
 
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
+
+  app.use(imageServerRouter);
 
   app.use('/graphql', expressMiddleware(server));
 

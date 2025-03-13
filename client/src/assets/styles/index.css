@@ -87,8 +87,14 @@ section {
 
 .show-more {
   text-align: center;
-  margin: 1rem 0;
   padding: 1rem 2rem;
+}
+
+.block-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-alt-wrapper {
@@ -125,7 +131,6 @@ input, textarea {
 
 button {
   align-self: center;
-  margin-top: 1rem;
   padding: 1rem 0.5rem;
   border: 0.1rem solid var(--light-primary);
   border-radius: 0.5rem;

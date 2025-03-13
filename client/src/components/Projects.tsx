@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
+import { useQuery } from '@apollo/client';
 
 import { loadProjects } from '../utility/loadService';
 import '@/styles/projects.css'
 import { ProjectCard } from './ProjectCard';
 import { ProjectProps } from '../interfaces/project.interface';
+import { GET_ALL_PROJECTS } from '../queries/getAllProjects';
 
 const sortProjects = (projects: ProjectProps[]): ProjectProps[] => {
     const getDateValue = (dateStr: string): number => {
@@ -27,16 +29,15 @@ const sortProjects = (projects: ProjectProps[]): ProjectProps[] => {
 
 export const Projects = () => {
     const DEFAULT_VIEW_LIMIT = 8;
+    const { loading, error, data } = useQuery(GET_ALL_PROJECTS);
     const [projects, setProjects] = useState<ProjectProps[]>([])
     const [viewLimit, setViewLimit] = useState(DEFAULT_VIEW_LIMIT);
 
     useEffect(() => {
-        const loadData = async () => {
-            const data: ProjectProps[] = await loadProjects();
-            setProjects(data);
+        if (data && data.projects) {
+            setProjects(data.projects);
         }
-        loadData();
-    }, []);
+    }, [data]);
 
     const displayedProjects = sortProjects(projects).slice(0, viewLimit);
     const hasMoreProjects = viewLimit < projects.length;
@@ -61,18 +62,22 @@ export const Projects = () => {
                 <button className="filter-button" disabled>Service</button>
             </nav>
             <ul className="projects-list">
-                {displayedProjects.map((project: ProjectProps) => (
-                    <li key={project._id}>
-                        <ProjectCard {...project} />
-                    </li>
-                ))}
+                {loading ? (<p className="loading">Loading...</p>) : 
+                    (displayedProjects.map((project: ProjectProps) => (
+                        <li key={project._id}>
+                            <ProjectCard {...project} />
+                        </li>
+                    )))
+                }
+                {error && <p className="error">Error: {error.message}</p>}
                 {hasMoreProjects && (
-                <button 
-                    className="show-more"
-                    onClick={() => setViewLimit((prev) => prev + DEFAULT_VIEW_LIMIT)}
-                >
-                    Show More!
-                </button>
+                    <div className="block-item">
+                        <button 
+                            className="show-more"
+                            onClick={() => setViewLimit((prev) => prev + DEFAULT_VIEW_LIMIT)}>
+                            Show More!
+                        </button>
+                    </div>
                 )}
             </ul>
         </section>

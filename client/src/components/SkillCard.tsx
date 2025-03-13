@@ -1,5 +1,6 @@
 import { useState } from "react"
 
+import S3Image from "./S3Image"
 import { SkillProps } from "../interfaces/skill.interface"
 import "@/styles/skillCard.css"
 
@@ -17,17 +18,27 @@ export const SkillCard = (props: SkillProps) => {
     showDescription = !showDescription;
   }
 
+  console.info({
+    message: "Rendering skill card for: ", 
+    name: props.skillName, 
+    location: props.iconURL
+  });
+
   return (
     <div className="skill-card">
       <div className="skill-header">
         <div className="image-alt-wrapper">
-          <img className="skill-icon" src={image} alt={props.skillName + " Icon"} />
+          <S3Image 
+            imageKey={props.iconURL || "skill-icons/None.svg"} 
+            alt={props.skillName + " icon"}
+            className="skill-icon" 
+          />
         </div>
         <h3 className="skill-title"><a href={props.skillURL}>{props.skillName}</a></h3>
         <small>
           <ul className="skill-types">
             {displayedSkillTypes.map((_, index) => (
-                <li className="skill-type">{props.skillType[index]}</li>
+                <li key={index} className="skill-type">{props.skillType[index]}</li>
             ))}
             {hasMoreSkillTypes && (
             <button 

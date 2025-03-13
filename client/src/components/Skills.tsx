@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import { useQuery } from "@apollo/client";
 
-import { loadSkills } from "../utility/loadService";
 import { SkillCard } from "./SkillCard";
 import { SkillProps } from "../interfaces/skill.interface";
+import { GET_ALL_SKILLS } from "../queries/getAllSkills";
 import '@/styles/skills.css'
 
 const sortSkillsByConfidence = (skills: SkillProps[]): SkillProps[] => {
@@ -17,30 +18,29 @@ const sortSkillsByConfidence = (skills: SkillProps[]): SkillProps[] => {
     return [...highlightedSkills, ...nonHighlightedSkills];
 }
 
-const sortSkillsByPassion = (skills: SkillProps[]): SkillProps[] => {
-    const highlightedSkills = skills
-        .filter(skill => skill.highlight)
-        .sort((a, b) => b.passionLevel - a.passionLevel);
+// const sortSkillsByPassion = (skills: SkillProps[]): SkillProps[] => {
+//     const highlightedSkills = skills
+//         .filter(skill => skill.highlight)
+//         .sort((a, b) => b.passionLevel - a.passionLevel);
 
-    const nonHighlightedSkills = skills
-        .filter(skill => !skill.highlight)
-        .sort((a, b) => b.passionLevel - a.passionLevel);
+//     const nonHighlightedSkills = skills
+//         .filter(skill => !skill.highlight)
+//         .sort((a, b) => b.passionLevel - a.passionLevel);
 
-    return [...highlightedSkills, ...nonHighlightedSkills];
-}
+//     return [...highlightedSkills, ...nonHighlightedSkills];
+// }
 
 export const Skills = () => {
-    const DEFAULT_VIEW_LIMIT = 8;
+    const DEFAULT_VIEW_LIMIT = 6;
+    const { loading, error, data } = useQuery(GET_ALL_SKILLS);
     const [skills, setSkills] = useState<SkillProps[]>([])
     const [viewLimit, setViewLimit] = useState(DEFAULT_VIEW_LIMIT);
 
     useEffect(() => {
-        const loadData = async () => {
-            const data: SkillProps[] = await loadSkills();
-            setSkills(data);
+        if (data && data.skills) {
+            setSkills(data.skills);
         }
-        loadData();
-    }, []);
+    }, [data]);
 
     const displayedSkills = sortSkillsByConfidence(skills).slice(0, viewLimit);
     const hasMoreSkills = viewLimit < skills.length;
@@ -72,18 +72,22 @@ export const Skills = () => {
                 <button className="filter-button skill-button" disabled>Other</button>
             </nav>
             <ul className="skills-list">
-                {displayedSkills.map((skill: SkillProps) => (
-                    <li key={skill._id}>
-                        <SkillCard {...skill} />
-                    </li>
-                ))}
+                {loading ? (<p className="loading">Loading...</p>) : 
+                    (displayedSkills.map((skill: SkillProps) => (
+                        <li key={skill._id}>
+                            <SkillCard {...skill} />
+                        </li>
+                    )))
+                }
+                {error && <p className="error">Error: {error.message}</p>}
                 {hasMoreSkills && (
-                <button 
-                    className="show-more"
-                    onClick={() => setViewLimit((prev) => prev + DEFAULT_VIEW_LIMIT)}
-                >
-                    Show More!
-                </button>
+                    <div className="block-item">
+                        <button 
+                            className="show-more"
+                            onClick={() => setViewLimit((prev) => prev + DEFAULT_VIEW_LIMIT)}>
+                            Show More!
+                        </button>
+                    </div>
                 )}
             </ul>
         </section>

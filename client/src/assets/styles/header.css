@@ -44,7 +44,7 @@ nav {
     padding: 0.2rem;
     display: block;
     font-size: 0.8rem;
-    font-weight: 100;
+    font-weight: 300;
     letter-spacing: 28%;
 }
 
@@ -72,7 +72,7 @@ nav {
     }
 
     .subtitle {
-        font-weight: 300;
+        font-weight: 400;
         letter-spacing: 27%;
     }
 }

@@ -17,6 +17,7 @@ const s3 = new AWS.S3();
 
 // Endpoint to get a signed URL for an S3 object
 router.get('/api/s3/getSignedUrl', async (req, res) => {
+  console.log('Request query:', req.query);
   try {
     const { key } = req.query;
 
@@ -29,7 +30,6 @@ router.get('/api/s3/getSignedUrl', async (req, res) => {
       Key: key,
       Expires: 3600 // URL expires in 1 hour
     };
-
     const signedUrl = s3.getSignedUrl('getObject', params);
     res.json({ url: signedUrl });
   } catch (error) {

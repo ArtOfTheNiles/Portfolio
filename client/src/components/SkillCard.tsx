@@ -8,7 +8,6 @@ export const SkillCard = (props: SkillProps) => {
   const DEFAULT_VIEW_LIMIT = 2;
   const [viewLimit, setViewLimit] = useState(DEFAULT_VIEW_LIMIT);
 
-  const image = props.iconURL ? props.iconURL : "https://picsum.photos/64";
   const displayedSkillTypes = props.skillType.slice(0, viewLimit);
   const hasMoreSkillTypes = viewLimit < props.skillType.length;
 
@@ -18,11 +17,11 @@ export const SkillCard = (props: SkillProps) => {
     showDescription = !showDescription;
   }
 
-  console.info({
-    message: "Rendering skill card for: ", 
-    name: props.skillName, 
-    location: props.iconURL
-  });
+  // console.info({
+  //   message: "Rendering skill card for: ", 
+  //   name: props.skillName, 
+  //   location: props.iconURL
+  // });
 
   return (
     <div className="skill-card">

@@ -1,6 +1,6 @@
 # Portfolio
 
-Welcome to the application behind my Portfolio website, currently being built with React
+Welcome to the application behind my Portfolio website! There's still more to do, but this should give you a good idea of what I am capable of. 
 
 
 
@@ -44,9 +44,10 @@ For those interested, here are ways that you can contribute to the project:
 
 ## Credits
 
-This project is built using Vite and React
+Client side built with Vite, React, Apollo and AWS.
+Server side built with Node, Express, Apollo, AWS and Mongoose.
 
-Special thanks to friends and family for supporting this project.
+> Special thanks to Dianne Miller for funding the last stretch of my Bootcamp, you helped make this happen!
 
 
 

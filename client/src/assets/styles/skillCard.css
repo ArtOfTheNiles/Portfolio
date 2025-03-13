@@ -11,7 +11,8 @@
   width: var(--skill-icon-size);
   height: var(--skill-icon-size);
   border-radius: 0.25rem;
-  border: 1px solid var(--link-hover);
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .skill-types {
@@ -35,7 +36,12 @@
   display: flex;
   flex-direction: column;
   background-color: rgba(139, 139, 139, 0.1);
+  background-image: linear-gradient(
+    rgba(139, 139, 139, 0.2) 10%,
+    rgba(0, 0, 0, 0.1) 80%
+  );
   border-radius: 1rem;
+  border: solid 0.2rem rgb(75, 75, 75);
 }
 
 .skill-header {
@@ -47,6 +53,11 @@
 
 .skill-header h3 {
   margin: 0 0 0.25rem 0;
+}
+.skill-header small {
+  padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .confidence-passion-section {

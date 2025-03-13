@@ -38,6 +38,18 @@ button, input, label {
   line-height: 1.1;
 }
 
+ul, ol {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block-start: 0;
+  padding-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  list-style: none;
+}
+
 /* Balance text wrapping on headings */
 h1, h2,
 h3, h4 {

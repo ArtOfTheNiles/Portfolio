@@ -11,21 +11,14 @@ function clampToTwenty(number: number) {
 export const SkillCard = (props: SkillProps) => {
   const DEFAULT_VIEW_LIMIT = 2;
   const [viewLimit, setViewLimit] = useState(DEFAULT_VIEW_LIMIT);
+  const [showDescription, setShowDescription] = useState(false);
 
   const displayedSkillTypes = props.skillType.slice(0, viewLimit);
   const hasMoreSkillTypes = viewLimit < props.skillType.length;
 
-  let showDescription = false;
   const toggleDescription = () => {
-    console.log("Toggling description: " + showDescription);
-    showDescription = !showDescription;
+    setShowDescription(!showDescription);
   }
-
-  // console.info({
-  //   message: "Rendering skill card for: ", 
-  //   name: props.skillName, 
-  //   location: props.iconURL
-  // });
 
   return (
     <div className="skill-card">
@@ -54,6 +47,35 @@ export const SkillCard = (props: SkillProps) => {
           </ul>
         </small>
       </div>
+        <div className="confidence-passion-section">
+          <span className="confidence-section">
+            <div className="text-number">
+              <h6>Confidence:</h6>
+              <span className={`confidence-level skillcap-${clampToTwenty(props.confidenceLevel)}`}>{props.confidenceLevel}</span>
+            </div>
+            <div className="decorator-bar-container">
+              {props.confidenceLevel > 0 && (<div className="fillbar-20"></div>)}
+              {props.confidenceLevel > 20 && (<div className="fillbar-40"></div>)}
+              {props.confidenceLevel > 40 && (<div className="fillbar-60"></div>)}
+              {props.confidenceLevel > 60 && (<div className="fillbar-80"></div>)}
+              {props.confidenceLevel > 80 && (<div className="fillbar-100"></div>)}
+            </div>
+          </span>
+          <span className="divider"> | </span>
+          <span className="passion-section">
+            <div className="text-number">
+              <h6>Passion:</h6>
+              <span className={`passion-level skillcap-${clampToTwenty(props.passionLevel)}`}>{props.passionLevel}</span>
+            </div>
+            <div className="decorator-bar-container">
+              {props.passionLevel > 0 && (<div className="fillbar-20"></div>)}
+              {props.passionLevel > 20 && (<div className="fillbar-40"></div>)}
+              {props.passionLevel > 40 && (<div className="fillbar-60"></div>)}
+              {props.passionLevel > 60 && (<div className="fillbar-80"></div>)}
+              {props.passionLevel > 80 && (<div className="fillbar-100"></div>)}
+            </div>
+          </span>
+        </div>
       <div className="skill-body">
         <p className="summary">{props.summary}</p>
         {!showDescription && ( 
@@ -69,16 +91,6 @@ export const SkillCard = (props: SkillProps) => {
           </button>
         </>
         )}
-        <div className="confidence-passion-section">
-          <span className="confidence-section">
-            <h6>Confidence:</h6>
-            <span className={`confidence-level skillcap-${clampToTwenty(props.confidenceLevel)}`}>{props.confidenceLevel}</span>
-          </span>
-          <span className="passion-section">
-            <h6>Passion:</h6>
-            <span className={`passion-level skillcap-${clampToTwenty(props.passionLevel)}`}>{props.passionLevel}</span>
-          </span>
-        </div>
       </div>
     </div>
   )

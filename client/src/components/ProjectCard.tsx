@@ -4,9 +4,7 @@ import { getNiceStringDate, getNiceStringDuration } from '../utility/dtFormat.js
 import S3Image from "./S3Image.js";
 
 
-
 export const ProjectCard = (props: ProjectProps) => {
-  const image = props.thumbnail ? props.thumbnail : 'https://picsum.photos/150';
   return (
     <div className="project-card">
       <S3Image 

@@ -1,14 +1,17 @@
 import { ProjectProps } from "../interfaces/project.interface"
 import '@/styles/projectCard.css'
 import { getNiceStringDate, getNiceStringDuration } from '../utility/dtFormat.js'
-
+import S3Image from "./S3Image.js";
 
 
 export const ProjectCard = (props: ProjectProps) => {
-  const image = props.thumbnail ? props.thumbnail : 'https://picsum.photos/150';
   return (
     <div className="project-card">
-      <img className="project-image" src={image} alt={props.projectName +' Image'} />
+      <S3Image 
+        imageKey={props.thumbnail || "404.png"} 
+        alt={props.projectName + " Image"}
+        className="project-image" 
+      />
       <h3 className="project-title">{props.projectName}</h3>
       <h4 className="project-job-type"><em>{props.jobType}</em></h4>
       <p className="project-description">{props.description}</p>

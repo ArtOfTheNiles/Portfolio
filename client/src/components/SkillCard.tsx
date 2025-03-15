@@ -25,7 +25,7 @@ export const SkillCard = (props: SkillProps) => {
       <div className="skill-header">
         <div className="image-alt-wrapper">
           <S3Image 
-            imageKey={props.iconURL || "skill-icons/None.svg"} 
+            imageKey={props.iconURL || "skill-icons/skill_blank.svg"} 
             alt={props.skillName + " icon"}
             className="skill-icon" 
           />

@@ -31,6 +31,8 @@
 }
 
 .filter-button {
+  font-size: 0.8rem;
+  font-weight: normal;
   padding: 0.25rem;
   min-width: 4rem;
   margin: 0;
@@ -38,7 +40,6 @@
   background-color: var(--disabled-button-bg-primary);
   background-image: linear-gradient(var(--disabled-button-bg-primary) 40%, var(--disabled-button-bg-secondary) 100%);
   color: var(--disabled-button-text);
-  font-weight: lighter;
   cursor: not-allowed;
 }
 

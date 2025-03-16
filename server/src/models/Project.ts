@@ -5,6 +5,7 @@ import { JobType } from './jobTypes';
 interface IProject extends Document {
   projectName: string;
   thumbnail?: string;
+  thumbnailAlignment?: string;
   clients?: Schema.Types.ObjectId[];
   jobType: JobType;
   startDate: String;
@@ -24,6 +25,10 @@ const projectSchema = new Schema<IProject>(
       required: true,
     },
     thumbnail: { type: String },
+    thumbnailAlignment: {
+      type: String,
+      default: 'center',
+    },
     clients: [{
       type: Schema.Types.ObjectId,
       ref: 'Client',

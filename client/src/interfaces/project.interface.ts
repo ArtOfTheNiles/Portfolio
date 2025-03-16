@@ -3,6 +3,7 @@ export interface ProjectProps {
     _id: string;
     projectName: string;
     thumbnail?: string;
+    thumbnailAlignment?: string;
     clients?: string[];
     jobType: string;
     startDate: string;

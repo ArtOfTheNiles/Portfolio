@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { ApolloProvider, InMemoryCache, ApolloClient } from '@apollo/client'
 import App from './App.tsx'
+import '@syles/reset.css'
 import '@/styles/index.css'
 
 const client = new ApolloClient({

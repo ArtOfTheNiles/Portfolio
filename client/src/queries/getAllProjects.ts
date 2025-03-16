@@ -17,6 +17,7 @@ export const GET_ALL_PROJECTS = gql`
       projectURL
       repositoryURL
       thumbnail
+      thumbnailAlignment
       associatedSkills {
         skillName
         iconURL

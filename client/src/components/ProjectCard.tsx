@@ -11,6 +11,7 @@ export const ProjectCard = (props: ProjectProps) => {
         imageKey={props.thumbnail || "404.png"} 
         alt={props.projectName + " Image"}
         className="project-image" 
+        thumbAlignment={props.thumbnailAlignment}
       />
       <h3 className="project-title">{props.projectName}</h3>
       <h4 className="project-job-type"><em>{props.jobType}</em></h4>

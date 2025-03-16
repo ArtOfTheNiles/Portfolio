@@ -30,6 +30,7 @@ const typeDefs = `
     _id: ID!
     projectName: String
     thumbnail: String
+    thumbnailAlignment: String
     clients: [Client]
     jobType: String
     startDate: String
@@ -78,6 +79,7 @@ const typeDefs = `
     addProject(
       projectName: String!
       thumbnail: String
+      thumbnailAlignment: String
       jobType: String!
       startDate: String!
       endDate: String

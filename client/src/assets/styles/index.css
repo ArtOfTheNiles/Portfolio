@@ -92,6 +92,8 @@ section {
 
 .show-more {
   text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
   padding: 1rem 2rem;
 }
 

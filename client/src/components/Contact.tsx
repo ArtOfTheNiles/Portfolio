@@ -110,6 +110,10 @@ export const Contact = () => {
             
             await fetch(scriptUrl, {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                redirect: 'follow',
                 body: JSON.stringify(formData),
                 mode: 'no-cors'
             });

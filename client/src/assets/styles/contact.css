@@ -55,10 +55,26 @@ textarea {
     height: 10rem;
 }
 
-button[type="submit"] {
+.form-submit-button {
+    display: flex;
     align-self: center;
-    margin-top: 1rem;
-    width: 8rem;
+    margin: 1rem auto;
+    width: fit-content;
+}
+
+.success-message * {
+    text-align: center;
+}
+
+.success-message > p {
+    margin: 0.5rem 0;
+    
+}
+
+.success-message > h3 {
+    margin: 0.5rem 0 0 0;
+    color: var(--link-visited);
+    font-weight: bold;
 }
 
 @media (prefers-color-scheme: dark) {

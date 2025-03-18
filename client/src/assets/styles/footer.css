@@ -1,7 +1,7 @@
 footer {
-    display: inline-block;
-    text-align: center;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-weight: 100;
     letter-spacing: 0.1rem;
     text-align: center;
@@ -9,14 +9,14 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    padding-top: 1.5rem;
-    background-image: radial-gradient(
-        ellipse at bottom, 
-        var(--dark-primary) 45%,
-        rgba(0,0,0,0) 65%
-    );
-    background-size: 300vw 100%;
-    background-position: -100vw 0;
+    padding: 0 0 1rem 0;
+    background-color: var(--dark-primary);
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .footer * {
@@ -24,6 +24,14 @@ footer {
     font-size: 0.75rem;
     font-weight: 300;
     letter-spacing: 15%;
+}
+
+.footer-topper {
+    height: 1rem;
+    background-color: var(--dark-primary);
+    background: linear-gradient(0deg, var(--dark-primary) 25%, rgba(0, 0, 0, 0) 100%);
+    background-size:cover;
+    background-position: center;
 }
 
 nav.footer {
@@ -45,5 +53,11 @@ nav.footer a {
     }
     .footer * {
         font-weight: 400;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer * {
+        font-size: 0.65rem;
     }
 }

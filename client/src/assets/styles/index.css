@@ -90,6 +90,14 @@ section {
   text-decoration-color: var(--link-hover);
 }
 
+.title-subtitle {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
 .show-more {
   text-align: center;
   font-size: 1rem;
@@ -141,7 +149,7 @@ button {
   padding: 1rem 0.5rem;
   border: 0.1rem solid var(--light-primary);
   border-radius: 0.5rem;
-  letter-spacing: 8%;
+  letter-spacing: 0.05rem;
   background-color: var(--callout-primary);
   background-image: linear-gradient(var(--callout-secondary) 40%, var(--callout-tertiary) 100%);
   color: var(--light-primary);
@@ -151,6 +159,23 @@ button {
 
 button:hover{
   background-image: linear-gradient(var(--callout-tertiary) 40%, var(--callout-secondary) 100%);
+}
+
+.filter-button {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem;
+  min-width: 4rem;
+  margin: 0;
+  border: 0.1rem solid var(--disabled-button-border);
+  background-color: var(--disabled-button-bg-primary);
+  background-image: linear-gradient(var(--disabled-button-bg-primary) 40%, var(--disabled-button-bg-secondary) 100%);
+  color: var(--disabled-button-text);
+  cursor: not-allowed;
+}
+
+.filter-button:hover {
+  background-image: linear-gradient(var(--disabled-button-bg-secondary) 40%, var(--disabled-button-bg-primary) 100%);
 }
 
 /* Special */

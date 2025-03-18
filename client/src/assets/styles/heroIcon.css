@@ -6,6 +6,7 @@
     width: var(--hero-icon-size);
     height: var(--hero-icon-size);
     margin-right: 1rem;
+    flex: none;
 }
 
 .hero-icon {

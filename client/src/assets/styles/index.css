@@ -238,6 +238,9 @@ button:hover{
 
 /*Sizes*/
 @media screen and (max-width: 600px) {
+  #root {
+    padding: 10rem 0 7rem 0;
+  }
   body {
       font-size: 12px;
   }

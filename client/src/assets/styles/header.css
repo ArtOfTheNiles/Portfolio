@@ -1,15 +1,19 @@
 header {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100vw;
     position: fixed;
     left: 0;
     top: 0;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 2rem;
     background-image: var(--dark-gradient);
     box-shadow: var(--shadow-style);
+}
+
+#header-container {
+    display: inline-flex;
+    flex-direction: row;
 }
 
 h1 {
@@ -74,5 +78,29 @@ nav {
     .subtitle {
         font-weight: 400;
         letter-spacing: 0.21rem;
+    }
+}
+
+/*Sizes*/
+@media screen and (max-width: 600px) {
+    header {
+        padding: 0.65rem;
+    }
+    h1 {
+        color: var(--light-secondary);
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+    nav {
+        display: inline-flex;
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .subtitle {
+        font-size: 0.7rem;
+        text-align: center;
+        padding: 0;
     }
 }

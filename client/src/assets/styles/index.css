@@ -55,6 +55,8 @@
 #root {
   padding: 9rem 0 7rem 0;
 }
+.wide-screen { display: inherit; }
+.narrow-screen { display: none; }
 
 /* Navigation */
 #projects, #about, #resume, #contact, #home, #skills, #clients {
@@ -238,6 +240,12 @@ button:hover{
 
 /*Sizes*/
 @media screen and (max-width: 600px) {
+  .wide-screen {
+    display: none;
+  }
+  .narrow-screen {
+    display: inherit;
+  }
   #root {
     padding: 10rem 0 7rem 0;
   }

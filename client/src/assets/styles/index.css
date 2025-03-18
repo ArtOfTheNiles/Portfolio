@@ -150,8 +150,8 @@ input, textarea {
 
 nav {
   display: inline-flex;
-  width: 40%;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: space-around;
 }

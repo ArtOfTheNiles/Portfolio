@@ -36,11 +36,13 @@
   font-weight: 400;
   font-size: 16px;
 
+  /* Color Modes */
   color-scheme: light dark;
   color: var(--light-primary);
   background-color: var(--dark-primary);
   --error: var(--light-bg-error);
 
+  /* Transitions */
   transition: color 0.25s ease-in,
   background-color 0.25s ease-in,
   --error 0.25s ease-in;
@@ -144,6 +146,14 @@ input, textarea {
   color: black;
   border-radius: 0.25rem;
   border-color: var(--callout-primary);
+}
+
+nav {
+  display: inline-flex;
+  width: 40%;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: space-around;
 }
 
 button {

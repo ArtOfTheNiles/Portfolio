@@ -34,3 +34,9 @@
         border: 0.3rem solid var(--link-hover);
     }
 }
+
+@media (max-width: 600px) {
+    :root {
+        --hero-icon-size: 3.5rem;
+    }
+}

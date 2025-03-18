@@ -6,6 +6,7 @@
     width: var(--hero-icon-size);
     height: var(--hero-icon-size);
     margin-right: 1rem;
+    flex: none;
 }
 
 .hero-icon {
@@ -31,5 +32,11 @@
 @media (prefers-color-scheme: light) {
     .hero-icon {
         border: 0.3rem solid var(--link-hover);
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --hero-icon-size: 3.5rem;
     }
 }

@@ -1,7 +1,8 @@
 .resume-section {
   margin: 3rem 0 4rem 1.5rem;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  gap: 1rem;
 }
 
 .resume-content {
@@ -29,4 +30,14 @@
 
 .resume-section a:hover {
   background-image: linear-gradient(var(--callout-tertiary) 40%, var(--callout-secondary) 100%);
+}
+
+@media screen and (max-width: 600px) {
+  .resume-section {
+    margin: 2rem 0 4rem;
+    gap: 1rem;
+  }
+  .resume-section a {
+    width: 18rem;
+  }
 }

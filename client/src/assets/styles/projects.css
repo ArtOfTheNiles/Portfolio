@@ -6,7 +6,7 @@
 }
 
 .projects-list {
-  margin: 0 1rem 0 0;
+  width: 95%;
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +20,7 @@
 .project-filters {
   display: flex;
   width: 90%;
-  margin: 0 auto 0.5rem;
+  margin: 1rem;
   padding: 1rem;
   background-color: rgba(127, 127, 127, 0.1);
   border-radius: 1rem;
@@ -30,32 +30,8 @@
   gap: 0.5rem;
 }
 
-.filter-button {
-  font-size: 0.8rem;
-  font-weight: normal;
-  padding: 0.25rem;
-  min-width: 4rem;
-  margin: 0;
-  border: 0.1rem solid var(--disabled-button-border);
-  background-color: var(--disabled-button-bg-primary);
-  background-image: linear-gradient(var(--disabled-button-bg-primary) 40%, var(--disabled-button-bg-secondary) 100%);
-  color: var(--disabled-button-text);
-  cursor: not-allowed;
-}
-
 nav {
   margin: 0 0 0.5rem 0;
-}
-
-.filter-button:hover {
-  background-image: linear-gradient(var(--disabled-button-bg-secondary) 40%, var(--disabled-button-bg-primary) 100%);
-}
-
-.title-subtitle {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  gap: 1rem;
 }
 
 h2 {
@@ -65,5 +41,6 @@ h2 {
 @media screen and (max-width: 800px) {
   .projects-list {
     flex-direction: column;
+    align-items: center;
   }
 }
